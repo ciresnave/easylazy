@@ -1,0 +1,22 @@
+name: release-plz
+
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  release:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: MarcoIeni/release-plz-action@v0.5.26    
+      - name: release-pr
+        run: release-plz release-pr
+      - name: release
+        run: release-plz release
+        
+                
