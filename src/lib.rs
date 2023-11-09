@@ -8,6 +8,10 @@
 //! - T must implement Clone
 //! - T must implement Default with a cheap operation
 //! - The Lazy variable must be mutable so that it can be initialized
+//! 
+//! Lazy is Send & Sync so long as T is Send & Sync.  Please make sure that your
+//! calculation is also thread safe before assuming YOUR Lazy variable is Send &
+//! Sync.
 
 #![no_std]
 
@@ -22,6 +26,18 @@ where T: Clone + Default
     value: Option<T>,
     /// The function to call to calculate the value of the lazy variable
     calculation: Box<dyn Fn() -> T>,
+}
+
+unsafe impl<T> Send for Lazy<T>
+where T: Clone + Default + Send
+{
+    // Nothing to do here
+}
+
+unsafe impl<T> Sync for Lazy<T>
+where T: Clone + Default + Sync
+{
+    // Nothing to do here
 }
 
 impl<T> Lazy<T>
