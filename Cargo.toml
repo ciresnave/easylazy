@@ -1,0 +1,18 @@
+[package]
+name = "easylazy"
+version = "0.1.0"
+edition = "2021"
+authors = ["Eric Evans <CireSnave@gmail.com>"]
+rust-version = "1.58.1"
+description = "Easy lazy initialization of variables"
+documentation = "https://github.com/ciresnave/easylazy"
+readme = "README.md"
+homepage = "https://github.com/ciresnave/easylazy"
+repository = "https://github.com/ciresnave/easylazy"
+license = "MIT"
+keywords = ["lazy", "initialization"]
+categories = ["algorithms", "caching", "data-structures", "no-std"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
