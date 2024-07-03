@@ -1,3 +1,5 @@
+*NOTE: Do not use this!  [LazyCell](https://doc.rust-lang.org/std/cell/struct.LazyCell.html) has been standardized and is better!*
+
 # EasyLazy - Lazy initialization made easy
 
 Looking at the available options for lazy initialization, I found that the most
